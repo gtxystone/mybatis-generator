@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry location="D:/MavenRepository/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar" />
+	<!-- <classPathEntry location="E:/mysql-connector-java.jar" /> -->
+	<context id="context1" targetRuntime="MyBatis3">
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
+		
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+			<property name="suppressDate" value="true" />
+		</commentGenerator>
+		<!-- <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://192.168.1.225:8066/jz_star?useUnicode=true&amp;characterEncoding=UTF-8"
+			userId="mycat" password="mycat" /> -->
+			
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://192.168.1.189:3366/jz_yaya?useUnicode=true&amp;characterEncoding=UTF-8"
+			userId="dba" password="mysql" />
+		<javaModelGenerator targetPackage="com.jiuzhi.biz.yaya.entity" targetProject="src">
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<sqlMapGenerator targetPackage="com.jiuzhi.biz.yaya.provider.dao" targetProject="src" />
+		<javaClientGenerator targetPackage="com.jiuzhi.biz.yaya.provider.dao" targetProject="src" type="XMLMAPPER" />
+		<!-- 
+		<table domainObjectName="Reinforce" tableName="t_reinforce">
+			<generatedKey type="post" identity="true" column="id" sqlStatement="MySql" />
+		</table>
+		
+		<table domainObjectName="ReinforceUser" tableName="t_reinforce_user">
+			<generatedKey type="post" identity="true" column="id" sqlStatement="MySql" />
+		</table>
+		
+		<table domainObjectName="ReinforceVote" tableName="t_reinforce_vote">
+			<generatedKey type="post" identity="true" column="id" sqlStatement="MySql" />
+		</table>
+		 -->
+		<table domainObjectName="Reinforce" tableName="t_reinforce">
+			<generatedKey type="post" identity="true" column="id" sqlStatement="MySql" />
+		</table>
+		
+<!-- 		<javaModelGenerator targetPackage="com.jiuzhi.biz.yaya.entity" targetProject="src">
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<sqlMapGenerator targetPackage="com.jiuzhi.biz.yaya.provider.dao" targetProject="src" />
+		<javaClientGenerator targetPackage="com.jiuzhi.biz.yaya.provider.dao" targetProject="src" type="XMLMAPPER" />
+		
+		<table domainObjectName="LiveStatus" tableName="t_live_status">
+			<generatedKey type="post" identity="true" column="id" sqlStatement="MySql" />
+		</table> -->
+		
+	
+	</context>
+</generatorConfiguration>
